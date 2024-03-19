@@ -1,0 +1,28 @@
+{
+    "title": "<i class=\"fas fa-bahai\"></i> Beispiel Liste",
+    "table": {
+        "name": "hoerbuecher",
+        "joins": [
+            "LEFT JOIN `personen` AS authoren ON `hoerbuecher`.`author_id` = `authoren`.`id`",
+            "LEFT JOIN `personen` AS sprecher ON `hoerbuecher`.`sprecher_id` = `sprecher`.`id`"
+        ]
+    },
+    "fields": {
+        "id": {
+            "title": "ID"
+        },
+        "titel": {
+            "title": "Titel"
+        },
+        "author": {
+            "title": "Author",
+            "table": "sprecher",
+            "field": "name"
+        },
+        "sprecher": {
+            "title": "Sprecher",
+            "table": "sprecher",
+            "field": "name"
+        }
+    }
+}
